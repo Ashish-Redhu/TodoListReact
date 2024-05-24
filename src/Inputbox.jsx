@@ -1,4 +1,7 @@
 import { useState } from "react";
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
+import "./Inputbox.css";
 
 export default function Inputbox({handleInput}){
 
@@ -17,8 +20,8 @@ export default function Inputbox({handleInput}){
     return(
         <div className="inputbox">
            <form onSubmit={handleSubmit}>
-              <input type="text" value={localInput} onChange={handleChange}/>
-              <button>Add</button> 
+            <TextField value={localInput} onChange={handleChange} required={true} variant="filled" label="Add task" className="input"></TextField>
+            <Button type="submit" variant="contained" className="button"> Add </Button>
               {/* By default every button is of type submit. */}
            </form>
         </div>
