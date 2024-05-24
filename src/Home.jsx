@@ -1,15 +1,16 @@
 import { useState } from "react";
+import { Button } from "@mui/material";
 import Inputbox from "./Inputbox";
 import List from "./List";
 import "./Home.css";
 export default function Home(){
-    const [input, setInput] = useState('');
+    // const [input, setInput] = useState('');
     // let arr=[];
     // arr.push(input);
     const [arr, setArr] = useState([]);
 
     const handleInput = (value)=>{
-        setInput(value);
+        // setInput(value);
         setArr((preArr)=>{
             return ([...preArr, value])
         });
@@ -31,12 +32,21 @@ export default function Home(){
         updatedArr[index] = newText;
         setArr(updatedArr);
     }
+
+    // To delete all tasks in single click.
+    const deleteAll= ()=>{
+        setArr(()=>
+        arr.filter((_,i)=>(
+            i!=i
+        )))
+    }
     console.log(arr);
        return(
         <div className="home">
             <div className="searchbox">
                 <Inputbox handleInput={handleInput} />
             </div>
+            <Button onClick={deleteAll} variant="contained">Delete All</Button>
             <div className="list">
                 <List arr={arr} deleteElement={deleteElement} editElement={editElement}/>
             </div>

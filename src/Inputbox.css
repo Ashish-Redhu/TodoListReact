@@ -3,10 +3,10 @@
     justify-content: center;
     margin: 20px;
 }
-.input{
+.inputbox .input{
     margin: auto 10px !important;
     background-color: white;
 }
-.button{
+.inputbox .button{
     margin: 10px auto !important;
 }

@@ -1,7 +1,10 @@
 // List.jsx
 
 import React, { useState } from "react";
-
+import { List as MUIList, ListItem, ListItemText, ListItemIcon, Divider, Avatar } from '@mui/material';
+import {TextField} from "@mui/material";
+import {Button} from "@mui/material";
+import "./List.css"
 export default function List({ arr, deleteElement, editElement }) {
     const [editIndex, setEditIndex] = useState(null);
     const [editText, setEditText] = useState("");
@@ -23,28 +26,24 @@ export default function List({ arr, deleteElement, editElement }) {
 
     return (
         <div className="list">
-            <ul>
-                {arr.map((element, index) => (
-                    <li key={index}>
-                        {editIndex === index ? (
-                            <>
-                                <input
-                                    type="text"
-                                    value={editText}
-                                    onChange={handleEditChange}
-                                />
-                                <button onClick={() => handleEditSubmit(index)}>Save</button>
-                            </>
-                        ) : (
-                            <>
-                                {element}
-                                <button onClick={() => deleteElement(index)}>Delete</button>
-                                <button onClick={() => handleEditClick(index, element)}>Edit</button>
-                            </>
-                        )}
-                    </li>
+            <MUIList>
+                {arr.map((element, index)=>(
+                   <ListItem key={index} className="task">
+                       {editIndex === index ? (
+                          <div className="editform">
+                            <TextField value={editText} onChange={handleEditChange} required={true} variant="filled" className="input"></TextField>
+                             <Button onClick={()=>handleEditSubmit(index)} type="submit" variant="contained" className="button"> Save </Button>
+                          </div>
+                       ):(
+                        <>
+                          <ListItemText primary={element}/>
+                          <Button onClick={() => deleteElement(index)} type="submit" variant="contained" className="button">Delete</Button>
+                          <Button onClick={() => handleEditClick(index, element)} type="submit" variant="contained" className="button">Edit</Button>
+                        </>
+                       )}
+                   </ListItem>
                 ))}
-            </ul>
+            </MUIList>
         </div>
     );
 }

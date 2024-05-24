@@ -14,7 +14,7 @@ export default function Inputbox({handleInput}){
 
     function handleSubmit(event){
         event.preventDefault(); // this will stop the form to go to some url. Means stops form complete reloading.
-        handleInput(localInput);  // this will update the state-variable of parent-component.
+        handleInput(localInput);  // this will add one more element to the parent component's array.
         setLocalInput('');     // this will again make the input fields empty.
     }
     return(

@@ -1,0 +1,12 @@
+.button{
+    margin: auto 5px !important;
+}
+.task{
+    border-bottom: 2px solid white;
+}
+.editform .input{
+    background-color: white;
+}
+.editform .button{
+    margin: 10px 10px !important;
+}
