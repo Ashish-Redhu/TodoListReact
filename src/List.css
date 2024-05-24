@@ -6,6 +6,7 @@
 }
 .editform .input{
     background-color: white;
+    width: 70vw;
 }
 .editform .button{
     margin: 10px 10px !important;
