@@ -1,4 +1,8 @@
-# React + Vite
+#1 To use this application simply do 2-things: i) npm install ii) npm run dev
+
+#2 A todoList website with functionalities: i) Add ii) Remove iii) Edit
+
+#3 React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
